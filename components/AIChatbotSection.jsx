@@ -75,7 +75,7 @@ export default function AIChatbotSection() {
               {/* Mensaje de respuesta del asistente */}
               <div className="space-y-3 text-xs mb-4">
                 <div className="bg-neutral-700/60 p-3 rounded-xl rounded-tl-none border border-neutral-600 text-slate-200">
-                  <p className="font-semibold text-amber-300 mb-1 flex items-center gap-1">
+                  <p className="font-semibold text-amber-300 mb-1 flex items-center gap-1"> 
                     <span className="material-symbols-outlined text-xs">auto_awesome</span> Consulta procesada:
                   </p>
                   <p className="leading-relaxed">

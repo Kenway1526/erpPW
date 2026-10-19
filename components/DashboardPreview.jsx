@@ -10,7 +10,7 @@ const metricsData = [
   {
     title: 'Empleados Activos',
     icon: 'badge',
-    iconBg: 'bg-blue-50',
+    iconBg: 'bg-blue-50', 
     iconColor: 'text-blue-700',
     value: '1,248',
     statusText: '+14 altas en el mes corriente',
@@ -56,8 +56,8 @@ const metricsData = [
 
 export default function DashboardPreview() {
   return (
-    <>
-      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs font-medium text-slate-600 mb-12">
+    <div className="w-full bg-white">
+      <div className="flex flex-wrap items-center justify-center gap-2 sm:gap-4 text-xs font-medium text-slate-600 mb-12 bg-white">
         {proofBadges.map((badge, index) => (
           <span
             key={index}
@@ -138,6 +138,6 @@ export default function DashboardPreview() {
           </span>
         </div>
       </div>
-    </>
+    </div>
   );
 }

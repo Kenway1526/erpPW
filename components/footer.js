@@ -11,7 +11,7 @@ export default function Fin() {
               <img
                 alt="Kore HR ERP Logo"
                 className="h-8 w-8 object-contain rounded"
-                src=""
+                src="lol"
               />
               <span className="text-lg font-black text-white tracking-tight">
                 Kore<span className="text-brand-500">HR</span>
