@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = useState(false);
@@ -12,18 +13,21 @@ export default function LoginPage() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
-  const handleAuthSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const router = useRouter();
+
+const handleAuthSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  e.preventDefault();
+  setIsSubmitting(true);
+
+  setTimeout(() => {
+    setIsSubmitting(false);
+    setSubmitSuccess(true);
 
     setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitSuccess(true);
-      setTimeout(() => {
-        setSubmitSuccess(false);
-      }, 1500);
-    }, 1200);
-  };
+      router.push('/');
+    }, 1000);
+  }, 1200);
+};
 
   return (
     <div className="bg-[#f8f9ff] text-[#0b1c30] min-h-screen flex flex-col justify-between font-sans">
@@ -227,6 +231,15 @@ export default function LoginPage() {
               <span>Google Workspace</span>
             </button>
           </div>
+                    <p className="text-center text-xs text-slate-500">
+            ¿No tienes una cuenta aún?
+            <Link
+              className="ml-1 font-bold text-[#964900] hover:text-[#592900] transition-colors"
+              href="/registro"
+            >
+              Registrarse
+            </Link>
+          </p>
         </div>
       </main>
 
